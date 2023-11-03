@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Dynamic Table</h2>
+
+<table id="myTable">
+  <tr>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Mobile</th>
+    <th>DOB</th>
+    <th>MaritalStatus</th>
+    <th>AadharNumber</th>
+    <th>BloodGroup</th>
+  </tr>
+  {{#each users}}
+  <tr>
+   <td>{{this.Name}}</td>
+        <td>{{this.Gender}}</td>
+        <td>{{this.Email}}</td>
+        <td>{{this.Mobile}}</td>
+        <td>{{this.DOB}}</td>
+        <td>{{this.MaritalStatus}}</td>
+        <td>{{this.AadharNumber}}</td>
+        <td>{{this.BloodGroup}}</td>
+  </tr>
+  <tr>
+  <td>{{this.Name}}</td>
+        <td>{{this.Gender}}</td>
+        <td>{{this.Email}}</td>
+        <td>{{this.Mobile}}</td>
+        <td>{{this.DOB}}</td>
+        <td>{{this.MaritalStatus}}</td>
+        <td>{{this.AadharNumber}}</td>
+        <td>{{this.BloodGroup}}</td>
+  </tr>
+  <tr>  
+    
+  <td>{{this.Name}}</td>
+  <td>{{this.Gender}}</td>
+  <td>{{this.Email}}</td>
+  <td>{{this.Mobile}}</td>
+  <td>{{this.DOB}}</td>
+  <td>{{this.MaritalStatus}}</td>
+  <td>{{this.AadharNumber}}</td>
+  <td>{{this.BloodGroup}}</td>
+</tr>
+  {{/each}}
+</table>
+
+<script>
+var table = document.getElementById("myTable");
+
+for(var i=0; i<users.length; i++){
+    var row =table.insertRow(i+1);
+    var Namecell =table.insertRow(0);
+    var Gendercell =table.insertRow(1);
+    var Mobilecell =table.insertRow(3);
+    var DOBcell =table.insertRow(3);
+    var MaritalStatuscell =table.insertRow(3);
+    var AadharNumbercell =table.insertRow(3);
+    var BloodGroupcell =table.insertRow(3);
+
+  
+  Namecell.innerHTML = users[i].Name;
+  Gendercell.innerHTML = users[i].Gender;
+  Mobilecell.innerHTML = users[i].Mobile;
+  DOBcell.innerHTML = users[i].DOB;
+  MaritalStatuscell.innerHTML = users[i].MaritalStatus;
+  AadharNumbercell.innerHTML = users[i].AadharNumber;
+  BloodGroupcell.innerHTML = users[i].BloodGroup;
+  
+
+
+}
+</script>
+
+</body>
+</html>
